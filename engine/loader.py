@@ -62,7 +62,7 @@ def get_team(team_code: str) -> list[dict]:
 def get_team_by_role(team_code: str, role: str) -> list[dict]:
     """
     Filter a team's players by role.
-    Roles in the data: 'batter', 'bowler', 'all_rounder', 'wicket_keeper'
+    Roles in the data: 'batter', 'bowler', 'all rounder', 'wicket_keeper'
     """
     return [p for p in get_team(team_code) if p["role"] == role]
 

@@ -7,7 +7,7 @@ import random
 from engine.loader import list_players
 
 # Sensible XI composition target: 1 keeper, ~5 batters, ~2 all-rounders, ~3 bowlers.
-_ROLE_TARGETS = {"wicket_keeper": 1, "batter": 5, "all_rounder": 2, "bowler": 3}
+_ROLE_TARGETS = {"wicket_keeper": 1, "batter": 5, "all rounder": 2, "bowler": 3}
 
 
 def overall_rating(p: dict) -> float:
@@ -30,7 +30,7 @@ def overall_rating(p: dict) -> float:
         return bat * 0.75 + bowl * 0.25
     if role == "bowler":
         return bat * 0.25 + bowl * 0.75
-    return bat * 0.5 + bowl * 0.5          # all_rounder
+    return bat * 0.5 + bowl * 0.5          # all rounder
 
 
 def get_draft_pool() -> list[dict]:

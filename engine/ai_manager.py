@@ -22,7 +22,7 @@ class InvalidXI(ValueError):
 # XI / bowling order builders
 # ---------------------------------------------------------------------------
 
-_ROLE_ORDER = {"wicket_keeper": 0, "batter": 1, "all_rounder": 2, "bowler": 3}
+_ROLE_ORDER = {"wicket_keeper": 0, "batter": 1, "all rounder": 2, "bowler": 3}
 
 
 MAX_OVERSEAS = 4
@@ -46,6 +46,24 @@ def build_xi(squad: list[dict]) -> list[dict]:
     players and at least 1 wicket-keeper — the same rules a real XI needs."""
     ordered = sorted(squad, key=lambda p: (_ROLE_ORDER.get(p["role"], 4), -_player_score(p)))
     xi = list(ordered[:11])
+
+    # Cap wicket-keepers at 1 — a real XI never fields more than one, but
+    # sorting keepers ahead of every other role can let several strong ones
+    # dominate the initial top-11 slice, crowding out bowlers/all-rounders.
+    keepers_in = sorted(
+        [p for p in xi if p["role"] == "wicket_keeper"], key=_player_score, reverse=True,
+    )
+    if len(keepers_in) > 1:
+        excess = keepers_in[1:]
+        xi_ids = {p["id"] for p in xi}
+        replacements = sorted(
+            [p for p in ordered[11:] if p["id"] not in xi_ids],
+            key=_player_score, reverse=True,
+        )
+        for i, out_player in enumerate(excess):
+            if i < len(replacements):
+                xi.remove(out_player)
+                xi.append(replacements[i])
 
     # Guarantee at least 3 genuine bowlers
     bowlers_in = [p for p in xi if p["bowling"]["wicket_threat"] > 0.25]
@@ -71,7 +89,7 @@ def build_xi(squad: list[dict]) -> list[dict]:
             key=_player_score, reverse=True,
         )
         removable = sorted(
-            [p for p in xi if p["role"] in ("batter", "all_rounder")],
+            [p for p in xi if p["role"] in ("batter", "all rounder")],
             key=_player_score,
         )
         if wk_candidates and removable:
@@ -79,11 +97,15 @@ def build_xi(squad: list[dict]) -> list[dict]:
             xi.append(wk_candidates[0])
             xi_ids = {p["id"] for p in xi}
 
-    # Enforce max 4 overseas players
+    # Enforce max 4 overseas players — never at the cost of the only keeper
+    # (an overseas keeper who's simply the weakest-scoring overseas player
+    # would otherwise get bumped for a batter, leaving the XI with none).
     overseas_in_xi = [p for p in xi if _is_overseas(p)]
     if len(overseas_in_xi) > MAX_OVERSEAS:
         excess = len(overseas_in_xi) - MAX_OVERSEAS
-        weakest_overseas = sorted(overseas_in_xi, key=_player_score)[:excess]
+        weakest_overseas = sorted(
+            [p for p in overseas_in_xi if p["role"] != "wicket_keeper"], key=_player_score,
+        )[:excess]
         indian_candidates = sorted(
             [p for p in squad if not _is_overseas(p) and p["id"] not in xi_ids],
             key=_player_score, reverse=True,
@@ -111,7 +133,7 @@ def build_bowling_order(xi: list[dict]) -> list[dict]:
     20th over's pick, so 6 makes a same-bowler-twice-in-a-row impossible)."""
     candidates = [
         p for p in xi
-        if p["bowling"]["wicket_threat"] > 0.1 or p["role"] in ("bowler", "all_rounder")
+        if p["bowling"]["wicket_threat"] > 0.1 or p["role"] in ("bowler", "all rounder")
     ]
     if len(candidates) < 6:
         have = {p["id"] for p in candidates}
@@ -189,7 +211,7 @@ def suggest_xi(squad: list[dict], stadium: dict, opponent_squad: list[dict]) -> 
             key=pitch_score, reverse=True,
         )
         removable = sorted(
-            [p for p in xi if p["role"] in ("batter", "all_rounder")],
+            [p for p in xi if p["role"] in ("batter", "all rounder")],
             key=pitch_score,
         )
         if wk_candidates and removable:

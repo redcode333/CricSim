@@ -60,7 +60,7 @@ def search_players(
     """
     Filter players by any combination of fields.
     - team: e.g. 'MI', 'CSK'
-    - role: 'batter', 'bowler', 'all_rounder', 'wicket_keeper'
+    - role: 'batter', 'bowler', 'all rounder', 'wicket_keeper'
     - nationality: 'IND', 'AUS', 'ENG', etc.
     - batting_style: 'right-hand' or 'left-hand'
     - bowling_type: 'pace' or 'spin'

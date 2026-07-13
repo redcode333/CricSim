@@ -7,7 +7,7 @@ import { api } from '../api'
 import styles from './Players.module.css'
 
 const ROLE_COLOR = {
-  batter: 'gold', bowler: 'teal', all_rounder: 'green', wicket_keeper: 'red',
+  batter: 'gold', bowler: 'teal', 'all rounder': 'green', wicket_keeper: 'red',
 }
 
 function StatBar({ label, value }) {

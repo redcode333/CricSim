@@ -8,7 +8,7 @@ import TossModal from '../components/match/TossModal'
 import styles from './Draft.module.css'
 
 const ROLE_COLOR = {
-  batter: 'gold', bowler: 'teal', all_rounder: 'green', wicket_keeper: 'red',
+  batter: 'gold', bowler: 'teal', 'all rounder': 'green', wicket_keeper: 'red',
 }
 
 function XiList({ players, title, count }) {
