@@ -83,9 +83,14 @@
   text-transform: uppercase;
   color: var(--text-muted);
   text-align: right;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  justify-content: flex-end;
 }
 .targetNum {
   font-family: var(--font-mono);
-  color: var(--text-dim);
-  margin-left: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
 }

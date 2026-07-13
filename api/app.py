@@ -36,8 +36,14 @@ def index():
 
 @app.get("/{full_path:path}")
 def spa_fallback(full_path: str):
-    """Serve index.html for any non-API client-side route (e.g. /tournament,
-    /match) so a hard refresh doesn't 404 — React Router handles the rest."""
+    """Serve a static file straight out of frontend/dist if one exists at that
+    path (e.g. /logo.png, /favicon.svg — Vite copies public/ assets to the
+    dist root, not under /assets). Otherwise fall back to index.html for
+    client-side routes (e.g. /tournament, /match) so a hard refresh doesn't
+    404 — React Router handles the rest."""
     if full_path.startswith("api/"):
         raise HTTPException(404)
+    candidate = (_DIST / full_path).resolve()
+    if candidate.is_relative_to(_DIST) and candidate.is_file():
+        return FileResponse(str(candidate))
     return FileResponse(str(_DIST / "index.html"))

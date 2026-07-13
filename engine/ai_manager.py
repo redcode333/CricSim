@@ -97,17 +97,28 @@ def build_xi(squad: list[dict]) -> list[dict]:
     return xi[:11]
 
 
+def _bowl_score(p: dict) -> float:
+    b = p["bowling"]
+    return b["wicket_threat"] * 0.45 + b["economy_skill"] * 0.35 + b["death_skill"] * 0.20
+
+
 def build_bowling_order(xi: list[dict]) -> list[dict]:
-    """Pick and rank bowlers from XI."""
+    """Pick and rank bowlers from XI. A 20-over innings needs at least 5
+    distinct bowlers to stay within the 4-overs-per-bowler cap; with exactly
+    5, uneven over-distribution can still force the same bowler into
+    back-to-back overs late in the innings, so guarantee 6 (5 bowlers can
+    cover at most 19 overs before a 6th is mathematically required for the
+    20th over's pick, so 6 makes a same-bowler-twice-in-a-row impossible)."""
     candidates = [
         p for p in xi
         if p["bowling"]["wicket_threat"] > 0.1 or p["role"] in ("bowler", "all_rounder")
     ]
-    candidates.sort(key=lambda p: -(
-        p["bowling"]["wicket_threat"] * 0.45
-        + p["bowling"]["economy_skill"] * 0.35
-        + p["bowling"]["death_skill"] * 0.20
-    ))
+    if len(candidates) < 6:
+        have = {p["id"] for p in candidates}
+        rest = sorted((p for p in xi if p["id"] not in have), key=lambda p: -_bowl_score(p))
+        candidates += rest[: 6 - len(candidates)]
+
+    candidates.sort(key=lambda p: -_bowl_score(p))
     return candidates[:7]
 
 

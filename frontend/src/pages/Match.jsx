@@ -211,6 +211,7 @@ function InteractiveMatch({ sid, returnTo, returnLabel, returnState }) {
   const liveData = {
     score: liveRuns, wickets: liveWkts, overs: liveOverStr,
     crr: liveCrr, target: sess.target, runs_needed: liveRunsNeeded,
+    balls_remaining: sess.target != null ? ballsRemaining(liveOverStr || '0.0') : null,
     rrr: liveRrr, batting_team: sess.bat_team, bowling_team: sess.fld_team,
     batsmen: batsmen.length ? batsmen : (sess.active_batsmen ?? []),
     currentBowler: currentBowler ?? sess.current_bowler,
