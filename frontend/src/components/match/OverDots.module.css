@@ -1,0 +1,30 @@
+.wrap { display: flex; align-items: center; gap: 10px; }
+.label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  width: 48px;
+}
+.dots { display: flex; gap: 5px; }
+
+.dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.dot.six     { border-color: var(--gold); color: var(--gold); background: var(--gold-glow); }
+.dot.four    { border-color: var(--teal); color: var(--teal); background: var(--teal-glow); }
+.dot.wicket  { border-color: var(--red); color: var(--red); background: rgba(224,82,82,.08); }
+.dot.extra   { border-color: #444; color: #666; font-size: 9px; }
+.dot.run     { border-color: #444; color: var(--text-dim); }
+.dot.dot     { color: var(--text-muted); }
+.dot.empty   { border-color: #1a1a1a; }

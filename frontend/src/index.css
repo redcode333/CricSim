@@ -1,0 +1,68 @@
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --bg:         #0a0a0a;
+  --surface:    #111111;
+  --surface-2:  #1a1a1a;
+  --border:     #222222;
+  --border-dim: #1a1a1a;
+
+  --text:       #f0f0f0;
+  --text-muted: #666666;
+  --text-dim:   #999999;
+
+  --gold:       #d4a017;
+  --gold-dim:   #a07810;
+  --gold-glow:  rgba(212, 160, 23, 0.18);
+  --teal:       #00c9a7;
+  --teal-dim:   #009980;
+  --teal-glow:  rgba(0, 201, 167, 0.15);
+
+  --red:        #e05252;
+  --green:      #4caf50;
+
+  --font-ui:    'Inter', system-ui, sans-serif;
+  --font-mono:  'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius:     0px;       /* sharp rectangles */
+  --radius-sm:  2px;
+  --transition: 160ms ease;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection { background: var(--gold-glow); color: var(--gold); }
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--text-muted); }
+.dim { color: var(--text-dim); }
+.gold { color: var(--gold); }
+.teal { color: var(--teal); }
+.red  { color: var(--red); }
+.green { color: var(--green); }
+
+/* ─── Focus ring ─────────────────────────────────────────────── */
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}

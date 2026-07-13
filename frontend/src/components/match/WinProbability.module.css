@@ -1,0 +1,48 @@
+.wrap { display: flex; flex-direction: column; gap: 6px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.teamLabel {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.probLabel {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bar {
+  position: relative;
+  height: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow: visible;
+}
+
+.fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dim) 100%);
+  box-shadow: 0 0 8px var(--teal-glow);
+}
+
+.divider {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 13px;
+  background: var(--bg);
+  transform: translateX(-50%);
+  transition: left 0.6s ease;
+}
+
+.footer { display: flex; justify-content: space-between; }
+.pct { font-family: var(--font-mono); font-size: 12px; font-weight: 600; }

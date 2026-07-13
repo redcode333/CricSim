@@ -1,0 +1,91 @@
+.board {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.batting { color: var(--gold); font-weight: 600; }
+.vs      { color: var(--text-muted); }
+.bowling { color: var(--text-dim); }
+
+.scoreRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.scoreMain {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.runs {
+  font-family: var(--font-mono);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.wkts {
+  font-size: 28px;
+  color: var(--text-dim);
+}
+
+.overs {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.rates {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rate { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.rateLabel {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rateVal {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.rateDivider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+}
+
+.teal { color: var(--teal) !important; }
+.red  { color: var(--red) !important; }
+
+.target {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: right;
+}
+.targetNum {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  margin-left: 4px;
+}

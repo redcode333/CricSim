@@ -1,0 +1,298 @@
+.root {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand { display: flex; align-items: center; }
+
+.logoImg {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.headerRight { display: flex; align-items: center; gap: 1rem; }
+
+.userLabel {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.logoutBtn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.logoutBtn:hover { border-color: var(--text-muted); color: var(--text); }
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+
+.saveHint {
+  background: rgba(212, 160, 23, 0.08);
+  border: 1px solid rgba(212, 160, 23, 0.25);
+  color: var(--gold);
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Menu grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 540px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--surface);
+  padding: 2rem 1.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: background var(--transition);
+  border: 1px solid transparent;
+  margin: -1px;
+}
+
+.card:hover {
+  background: var(--surface-2);
+  border-color: var(--border);
+  z-index: 1;
+}
+
+.cardGold .cardIcon { color: var(--gold); }
+.cardGold:hover { border-color: var(--gold-dim); }
+
+.cardIcon { color: var(--text-dim); }
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cardDesc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.saveChip {
+  display: inline-block;
+  background: rgba(212, 160, 23, 0.12);
+  color: var(--gold);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  margin-top: 0.3rem;
+  width: fit-content;
+}
+
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footerContact {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footerContact:hover { color: var(--gold); }
+
+/* ── Modal ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  transition: color var(--transition);
+}
+.closeBtn:hover { color: var(--text); }
+
+.modalForm { display: flex; flex-direction: column; gap: 1rem; }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.field label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.teamLabelTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+}
+
+.teamBadgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.field select,
+.field input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.85rem;
+  font-family: var(--font-ui);
+  cursor: pointer;
+}
+
+.field select:focus,
+.field input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.err {
+  background: rgba(224, 82, 82, 0.08);
+  border: 1px solid rgba(224, 82, 82, 0.3);
+  color: var(--red);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+.btnPlay {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  transition: opacity var(--transition);
+  margin-top: 0.25rem;
+}
+
+.btnPlay:hover:not(:disabled) { opacity: 0.88; }
+.btnPlay:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Interactive mode selector ── */
+.modeRow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.modeBtn {
+  flex: 1;
+  min-width: 100px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.78rem;
+  font-family: var(--font-ui);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.modeBtn:hover { border-color: var(--text-muted); color: var(--text); }
+
+.modeBtnActive {
+  background: rgba(212, 160, 23, 0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.modeHint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0;
+  line-height: 1.4;
+}

@@ -1,0 +1,231 @@
+/* Stats page uses the app's own matte-black dark theme, same tokens as
+   the rest of the app (see index.css), rather than a separate light theme. */
+
+.root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui, sans-serif);
+}
+
+.topBar {
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: inherit;
+}
+.backBtn:hover { color: var(--text); }
+
+/* ── Filter row ── */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.simpleSelect {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.55rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.45rem 0.6rem 0.45rem 1.9rem;
+  font-size: 0.78rem;
+  font-family: inherit;
+  border-radius: 3px;
+  min-width: 200px;
+}
+
+.searchInput:focus, .simpleSelect:focus { outline: none; border-color: var(--gold); }
+
+/* ── Custom award dropdown ── */
+.dropdownWrap {
+  position: relative;
+}
+
+.awardTrigger {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.45rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 190px;
+  justify-content: space-between;
+}
+
+.chevOpen { transform: rotate(180deg); }
+
+.awardPanel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 320px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  z-index: 50;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.categoryTabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.categoryTab {
+  flex: 1;
+  background: var(--surface);
+  border: none;
+  padding: 0.55rem 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.categoryTabActive {
+  background: #1565C0;
+  color: #fff;
+}
+
+.awardList {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.awardItem {
+  padding: 0.6rem 0.85rem;
+  font-size: 0.78rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.awardItem:last-child { border-bottom: none; }
+.awardItem:hover { background: var(--surface); }
+.awardItemActive { background: rgba(21,101,192,0.18); color: #5b9bd9; font-weight: 600; }
+
+/* ── Table ── */
+.tableWrap {
+  overflow-x: auto;
+  padding: 0 1.25rem 1.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  min-width: 900px;
+}
+
+.table thead tr {
+  background: var(--surface-2);
+}
+
+.table th {
+  color: var(--text);
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.6rem 0.55rem;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.playerHeadCell { min-width: 170px; }
+
+.table td {
+  padding: 0.5rem 0.55rem;
+  border-bottom: 1px solid var(--border-dim);
+  color: var(--text-dim);
+}
+
+.table tbody tr:hover { background: var(--surface); }
+
+.numCell { text-align: right; font-variant-numeric: tabular-nums; }
+
+.highlightCol { background: var(--surface); color: var(--text); font-weight: 700; }
+
+.playerCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 170px;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.playerNameCol { display: flex; flex-direction: column; line-height: 1.2; }
+.playerName { font-weight: 600; color: var(--text); }
+.playerTeam { font-size: 0.66rem; color: var(--text-muted); font-weight: 600; }
+
+.notice {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  font-family: inherit;
+}

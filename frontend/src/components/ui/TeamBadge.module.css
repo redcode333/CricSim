@@ -1,0 +1,19 @@
+.badge {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-family: var(--font-ui);
+  flex-shrink: 0;
+  user-select: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.clickable { cursor: pointer; }
+
+.badgeSelected {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 2px;
+}

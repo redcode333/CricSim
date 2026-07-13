@@ -1,0 +1,298 @@
+{
+  "metadata": {
+    "title": "World Cricket Stadiums - Pitch & Conditions Statistics",
+    "version": "1.0",
+    "description": "Pitch characteristics and venue statistics for 10 notable cricket stadiums. Advantage ratings are on a 0-100 scale where higher = stronger advantage for that discipline. Score figures are approximate, representative T20 first-innings ranges intended for simulation/modelling, not exact records.",
+    "scale_notes": {
+      "spin_advantage": "0 = no help for spinners, 100 = extreme turn (rank turner)",
+      "pace_advantage": "0 = no help for fast bowlers, 100 = green seamer/express bounce",
+      "batting_advantage": "0 = bowler-dominated, 100 = flat featherbed batting paradise",
+      "swing_factor": "0 = no lateral movement, 100 = heavy swing/seam conditions",
+      "bounce": "0 = low/slow, 100 = steep/high bounce",
+      "dew_factor": "0 = negligible, 100 = heavy evening dew aiding chasing side"
+    },
+    "last_updated": "2026-06-26"
+  },
+  "stadiums": [
+    {
+      "id": 1,
+      "name": "M. A. Chidambaram Stadium (Chepauk)",
+      "city": "Chennai",
+      "country": "India",
+      "capacity": 50000,
+      "pitch_type": "Dry, dusty, slow turner",
+      "ratings": {
+        "spin_advantage": 92,
+        "pace_advantage": 30,
+        "batting_advantage": 45,
+        "swing_factor": 25,
+        "bounce": 40,
+        "dew_factor": 50
+      },
+      "avg_first_innings_t20": 165,
+      "toss_decision_bias": "bat first",
+      "favoured_discipline": "spin",
+      "notes": "One of the most spin-friendly venues in world cricket. Surface grips and turns sharply, rewarding finger and wrist spinners. Becomes harder to bat on as the match wears on."
+    },
+    {
+      "id": 2,
+      "name": "Wankhede Stadium",
+      "city": "Mumbai",
+      "country": "India",
+      "capacity": 33000,
+      "pitch_type": "Hard, true batting surface",
+      "ratings": {
+        "spin_advantage": 38,
+        "pace_advantage": 55,
+        "batting_advantage": 82,
+        "swing_factor": 40,
+        "bounce": 65,
+        "dew_factor": 78
+      },
+      "avg_first_innings_t20": 185,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "batting",
+      "notes": "High-scoring batting paradise with true bounce and short straight boundaries. Heavy evening dew strongly favours the chasing side; sea breeze can assist swing early."
+    },
+    {
+      "id": 3,
+      "name": "Eden Gardens",
+      "city": "Kolkata",
+      "country": "India",
+      "capacity": 68000,
+      "pitch_type": "Balanced, slows later",
+      "ratings": {
+        "spin_advantage": 58,
+        "pace_advantage": 50,
+        "batting_advantage": 68,
+        "swing_factor": 45,
+        "bounce": 55,
+        "dew_factor": 60
+      },
+      "avg_first_innings_t20": 175,
+      "toss_decision_bias": "bat first",
+      "favoured_discipline": "balanced",
+      "notes": "Generally a good batting track that offers pace early and increasing assistance to spinners in the second half. One of the largest and most iconic cricket venues."
+    },
+    {
+      "id": 4,
+      "name": "M. Chinnaswamy Stadium",
+      "city": "Bengaluru",
+      "country": "India",
+      "capacity": 40000,
+      "pitch_type": "Flat, high-altitude batting belter",
+      "ratings": {
+        "spin_advantage": 35,
+        "pace_advantage": 48,
+        "batting_advantage": 88,
+        "swing_factor": 35,
+        "bounce": 60,
+        "dew_factor": 65
+      },
+      "avg_first_innings_t20": 195,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "batting",
+      "notes": "One of the highest-scoring grounds in the world. Small boundaries and a fast outfield at altitude make it a batsman's haven; bowlers of all types struggle."
+    },
+    {
+      "id": 5,
+      "name": "Arun Jaitley Stadium (Feroz Shah Kotla)",
+      "city": "Delhi",
+      "country": "India",
+      "capacity": 41000,
+      "pitch_type": "Slow, low, grips for spin",
+      "ratings": {
+        "spin_advantage": 72,
+        "pace_advantage": 38,
+        "batting_advantage": 55,
+        "swing_factor": 30,
+        "bounce": 38,
+        "dew_factor": 55
+      },
+      "avg_first_innings_t20": 170,
+      "toss_decision_bias": "bat first",
+      "favoured_discipline": "spin",
+      "notes": "Traditionally a slow, low surface that aids spinners and makes timing difficult. Older pitches grip noticeably; newer drop-in style strips have played truer recently."
+    },
+    {
+      "id": 6,
+      "name": "Rajiv Gandhi International Stadium",
+      "city": "Hyderabad",
+      "country": "India",
+      "capacity": 39000,
+      "pitch_type": "True, batting friendly",
+      "ratings": {
+        "spin_advantage": 48,
+        "pace_advantage": 52,
+        "batting_advantage": 78,
+        "swing_factor": 38,
+        "bounce": 58,
+        "dew_factor": 62
+      },
+      "avg_first_innings_t20": 188,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "batting",
+      "notes": "Generally a flat, true surface with consistent bounce that favours stroke play. Dew can play a role in evening fixtures, nudging captains to chase."
+    },
+    {
+      "id": 7,
+      "name": "Melbourne Cricket Ground (MCG)",
+      "city": "Melbourne",
+      "country": "Australia",
+      "capacity": 100024,
+      "pitch_type": "Large ground, fair pace and bounce",
+      "ratings": {
+        "spin_advantage": 42,
+        "pace_advantage": 68,
+        "batting_advantage": 60,
+        "swing_factor": 55,
+        "bounce": 70,
+        "dew_factor": 35
+      },
+      "avg_first_innings_t20": 165,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "pace",
+      "notes": "The largest cricket ground by capacity with vast boundaries that reward running and put a premium on clearing the rope. Pace and bounce assist seamers; spinners get drift on the big square."
+    },
+    {
+      "id": 8,
+      "name": "Lord's Cricket Ground",
+      "city": "London",
+      "country": "England",
+      "capacity": 30000,
+      "pitch_type": "Seaming, swing-friendly with the famous slope",
+      "ratings": {
+        "spin_advantage": 33,
+        "pace_advantage": 72,
+        "batting_advantage": 58,
+        "swing_factor": 80,
+        "bounce": 62,
+        "dew_factor": 30
+      },
+      "avg_first_innings_t20": 160,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "pace",
+      "notes": "Overcast English conditions and the distinctive 2.5m slope make this a seam and swing bowler's venue. New-ball movement is pronounced; batting eases under sun."
+    },
+    {
+      "id": 9,
+      "name": "Galle International Stadium",
+      "city": "Galle",
+      "country": "Sri Lanka",
+      "capacity": 35000,
+      "pitch_type": "Extreme dry turner",
+      "ratings": {
+        "spin_advantage": 95,
+        "pace_advantage": 25,
+        "batting_advantage": 40,
+        "swing_factor": 28,
+        "bounce": 35,
+        "dew_factor": 45
+      },
+      "avg_first_innings_t20": 155,
+      "toss_decision_bias": "bat first",
+      "favoured_discipline": "spin",
+      "notes": "Among the most spin-dominated venues in the world, especially in the longer format. The surface breaks up quickly, offering sharp turn and variable bounce that spinners exploit ruthlessly."
+    },
+    {
+      "id": 10,
+      "name": "Dubai International Cricket Stadium",
+      "city": "Dubai",
+      "country": "United Arab Emirates",
+      "capacity": 25000,
+      "pitch_type": "Slow, two-paced, grips for spin",
+      "ratings": {
+        "spin_advantage": 70,
+        "pace_advantage": 45,
+        "batting_advantage": 60,
+        "swing_factor": 35,
+        "bounce": 48,
+        "dew_factor": 58
+      },
+      "avg_first_innings_t20": 162,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "spin",
+      "notes": "A slow, tacky surface where the ball can stop and grip, making spin and pace-off variations effective. Scoring is moderate; dew in night games encourages chasing."
+    },
+    {
+      "id": 11,
+      "name": "Narendra Modi Stadium",
+      "city": "Ahmedabad",
+      "country": "India",
+      "capacity": 132000,
+      "pitch_type": "Hard, true, slows as match progresses",
+      "ratings": {
+        "spin_advantage": 55,
+        "pace_advantage": 52,
+        "batting_advantage": 72,
+        "swing_factor": 38,
+        "bounce": 55,
+        "dew_factor": 52
+      },
+      "avg_first_innings_t20": 175,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "balanced",
+      "notes": "The world's largest cricket stadium. The surface is hard and true early, rewarding strokeplay, but spinners find increasing grip as the innings develops. The vast outfield makes running between the wickets crucial."
+    },
+    {
+      "id": 12,
+      "name": "BRSABV Ekana Cricket Stadium",
+      "city": "Lucknow",
+      "country": "India",
+      "capacity": 50000,
+      "pitch_type": "Batting friendly, moderate spin later",
+      "ratings": {
+        "spin_advantage": 62,
+        "pace_advantage": 50,
+        "batting_advantage": 73,
+        "swing_factor": 40,
+        "bounce": 52,
+        "dew_factor": 68
+      },
+      "avg_first_innings_t20": 172,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "balanced",
+      "notes": "A modern venue that consistently produces high-scoring games. The pitch is batting-friendly in the powerplay but offers increasing assistance to spinners from the middle overs. Significant evening dew strongly advantages the chasing team in night fixtures."
+    },
+    {
+      "id": 13,
+      "name": "Maharaja Yadavindra Singh International Cricket Stadium",
+      "city": "Mullanpur",
+      "country": "India",
+      "capacity": 33000,
+      "pitch_type": "Hard, lively, pace-friendly with good carry",
+      "ratings": {
+        "spin_advantage": 45,
+        "pace_advantage": 62,
+        "batting_advantage": 68,
+        "swing_factor": 50,
+        "bounce": 65,
+        "dew_factor": 50
+      },
+      "avg_first_innings_t20": 170,
+      "toss_decision_bias": "bowl first",
+      "favoured_discipline": "pace",
+      "notes": "A modern stadium near Chandigarh with a lively, pace-friendly surface. The ball carries well to the keeper and pacers generate sharp movement off the pitch. One of the more bowler-friendly venues in the IPL, rewarding seam and swing bowlers especially in the powerplay."
+    },
+    {
+      "id": 14,
+      "name": "Sawai Mansingh Stadium",
+      "city": "Jaipur",
+      "country": "India",
+      "capacity": 30000,
+      "pitch_type": "Dry, spin-friendly, decent batting surface",
+      "ratings": {
+        "spin_advantage": 68,
+        "pace_advantage": 42,
+        "batting_advantage": 72,
+        "swing_factor": 28,
+        "bounce": 48,
+        "dew_factor": 42
+      },
+      "avg_first_innings_t20": 175,
+      "toss_decision_bias": "bat first",
+      "favoured_discipline": "balanced",
+      "notes": "Set in the Pink City, this intimate ground has a dry surface that suits wrist and finger spinners from the middle overs. The desert climate means minimal dew, making first-innings targets defendable. A balanced venue that rewards both aggressive strokeplay and quality spin bowling."
+    }
+  ]
+}

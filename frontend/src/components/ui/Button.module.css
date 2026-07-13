@@ -1,0 +1,83 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: background var(--transition), border-color var(--transition),
+              color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+/* sizes */
+.sm  { font-size: 11px; padding: 5px 12px; }
+.md  { font-size: 12px; padding: 9px 20px; }
+.lg  { font-size: 13px; padding: 13px 28px; }
+
+.full { width: 100%; }
+
+/* ── GOLD variants ───────────────────────────── */
+.outline.gold {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.outline.gold:hover {
+  background: var(--gold-glow);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.solid.gold {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #0a0a0a;
+}
+.solid.gold:hover {
+  background: #e8b820;
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+/* ── TEAL variants ───────────────────────────── */
+.outline.teal {
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  background: transparent;
+}
+.outline.teal:hover {
+  background: var(--teal-glow);
+  box-shadow: 0 0 12px var(--teal-glow);
+}
+
+.solid.teal {
+  border: 1px solid var(--teal);
+  background: var(--teal);
+  color: #0a0a0a;
+}
+.solid.teal:hover {
+  background: #00ddbb;
+  box-shadow: 0 0 16px var(--teal-glow);
+}
+
+/* ── Ghost ───────────────────────────────────── */
+.ghost {
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: transparent;
+}
+.ghost:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+}
+
+/* ── Disabled ─────────────────────────────────── */
+.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}

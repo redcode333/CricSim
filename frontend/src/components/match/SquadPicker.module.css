@@ -1,0 +1,188 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  transition: color var(--transition);
+}
+.closeBtn:hover { color: var(--text); }
+
+.squadModal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.squadRules {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+
+.ruleBad { color: var(--red); font-weight: 600; }
+
+/* ── AI suggestion banner ── */
+.suggestBanner {
+  background: rgba(0, 201, 167, 0.08);
+  border: 1px solid rgba(0, 201, 167, 0.3);
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.suggestHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.suggestTitle {
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.useAiBtn {
+  background: none;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 0.25rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.useAiBtn:hover { background: rgba(0, 201, 167, 0.12); }
+
+.reasonTag {
+  font-size: 0.64rem;
+  color: var(--teal);
+  margin-top: 0.15rem;
+}
+
+.squadList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.squadPlayer {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.squadPlayer:hover { background: var(--surface-2); }
+
+.squadPlayerSelected {
+  background: rgba(212, 160, 23, 0.1);
+  box-shadow: inset 2px 0 0 var(--gold);
+}
+
+.squadFooter {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.pName { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+
+.pMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.pTeam { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; text-transform: capitalize; }
+
+.pStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.poolEmpty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.err {
+  background: rgba(224, 82, 82, 0.08);
+  border: 1px solid rgba(224, 82, 82, 0.3);
+  color: var(--red);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+.btnPlay {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  transition: opacity var(--transition);
+  margin-top: 0.25rem;
+}
+
+.btnPlay:hover:not(:disabled) { opacity: 0.88; }
+.btnPlay:disabled { opacity: 0.5; cursor: not-allowed; }

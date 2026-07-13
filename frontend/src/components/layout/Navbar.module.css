@@ -1,0 +1,90 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 32px;
+  height: 52px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  flex: 1;
+}
+
+.link {
+  position: relative;
+  display: block;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.link:hover { color: var(--text); }
+.active     { color: var(--gold) !important; }
+
+.indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.username {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.logoutBtn, .loginBtn {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: none;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+.logoutBtn:hover, .loginBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
